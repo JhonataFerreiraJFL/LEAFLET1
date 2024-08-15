@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+     <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+    <style>
+        #mapDiv{
+            height: 700px;
+            width: 700px;
+            border: solid 1px black;
+        }
+    </style>
+</head>
+<body>
+    <div id="mapDiv">i</div>
+    <script>
+        let map = L.map(document.getElementById('mapDiv'),{
+            center:[-22.845664807155067, -43.08791316599497],
+            zoom:15
+        });
+        let basemap = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        });
+        basemap.addTo(map);
+        let Maker = L.marker([-22.845664807155067, -43.08791316599497], {title:'Agosto de 2024'});
+
+        Maker.bindPopup('Agosto de 2024')
+        Maker.addTo(map);
+    </script>
+
+    </div>
+</body>
+</html>
